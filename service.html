@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      /* Empêcher le défilement de la page */
+      html, body {
+        overflow: hidden;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Conteneur principal avec défilement */
+      #main-content {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        position: relative;
+        z-index: 3;
+        border-radius: 18px;
+      }
+
+      .bouton1 {
+        text-decoration: none;
+        color: #d3ae36;
+      }
+
+      .icon1 {
+        font-size: 15px;
+        color: #d3ae36;
+      }
+
+      .cadre1 {
+        padding: 15px;
+        background-image: url(./img/mariage.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: rgb(22, 22, 22);
+        position: relative;
+        overflow: hidden;
+        border-radius: 18px;
+      }
+
+      
+      .glass {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: inherit;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      
+      .glass-content {
+        position: relative;
+        z-index: 2;
+        padding: 18px 0 0 0;
+      }
+
+      
+      .row-centered {
+        justify-content: center;
+      }
+
+      
+      .row-centered .col {
+        max-width: 400px;
+        flex: 0 0 auto;
+      }
+
+      .navbar-logo {
+        height: 75px;
+        width: auto;
+      }
+
+      
+      .navbar-glass {
+        background-color: white;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-glass .navbar-brand,
+      .navbar-glass .nav-link {
+        color: #000000;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-glass .nav-link:hover {
+        color: #d3ae36;
+        transform: translateY(-2px);
+      }
+
+  
+      .social-icons a {
+        color: #d3ae36;
+        font-size: 1.2rem;
+        margin-left: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #d3ae36;
+        transform: scale(1.2);
+      }
+
+      :root {
+  --gold: #D3AE36;
+}
+
+
+.hero-section {
+  min-height: 80vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("images/hero.jpg") center/cover no-repeat;
+}
+
+.hero-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+
+.btn-gold {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+  padding: 10px 24px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+
+.btn-gold:hover,
+.btn-gold:focus,
+.btn-gold:active {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+  box-shadow: none;
+}
+
+
+       .footer {
+        background-color: #262626;
+        color: #ccc;
+        padding: 70px 0;
+        position: relative;
+        bottom: -20px;
+      }
+
+      .footer h5 {
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .footer a {
+        color: #ccc;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        transition: 0.3s;
+      }
+
+      .footer a:hover {
+        color: #d3ae36;
+        padding-left: 5px;
+      }
+
+      .footer .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #444;
+        border-radius: 50%;
+        margin-right: 10px;
+        color: #fff;
+      }
+
+      .footer .social-icons a:hover {
+        background-color: #d3ae36;
+        border-color: #d3ae36;
+        color: #2b2b2b;
+      }
+
+      .footer .contact-info i {
+        color: #d3ae36;
+        margin-right: 10px;
+      }
+
+      .footer-logo {
+        height: 100px;
+      }
+
+      .expertise-section {
+    background-color: #D3AE36; 
+    border-radius: 10px;
+    height: 90vh;
+}
+
+
+.expertise-img {
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+
+}
+
+.expertise-img img {
+    border-radius: 5px;
+    object-fit: cover;
+    height: 70VH;
+    width: 70vh;
+}
+
+
+.expertise-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.expertise-list i {
+    color: #fff;
+    font-size: 18px;
+}
+
+
+
+:root {
+  --gold: #D3AE36;
+}
+
+
+.text-gold {
+  color: var(--gold);
+}
+
+
+.btn-gold {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.btn-gold:hover,
+.btn-gold:focus,
+.btn-gold:active {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+  box-shadow: none;
+}
+
+.btn-outline-gold {
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  background-color: transparent;
+}
+
+
+.btn-outline-gold:hover,
+.btn-outline-gold:focus,
+.btn-outline-gold:active {
+  color: var(--gold);
+  background-color: transparent;
+  border-color: var(--gold);
+  box-shadow: none;
+}
+
+
+:root {
+  --gold: #D3AE36;
+}
+
+
+.cta-section {
+  background-color: var(--gold);
+}
+
+
+.btn-cta {
+  background-color: #fff;
+  color: var(--gold);
+  border: 2px solid #fff;
+  padding: 10px 22px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+
+.btn-cta:hover,
+.btn-cta:focus,
+.btn-cta:active {
+  background-color: #fff;
+  color: var(--gold);
+  border-color: #fff;
+  box-shadow: none;
+}
+
+.hero1 {
+  background-image: url(img/22.jpg);
+  
+}
+
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+ </style>
+  </head>
+
+  <body>
+
+    <div id="main-content">
+
+     <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+        
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <img
+              src="./img/logo header.jpg"
+              alt="Logo Modallas"
+              class="navbar-logo"
+            />
+          </a>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="A propos.html">À propos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Réalisaion.html">Réalisations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Boutique.html">Boutique</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+
+            <div class="social-icons">
+              
+              <a href="https://www.instagram.com/modallas_s_event_and_design"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="https://wa.me/22962685058"
+                ><i class="bi bi-whatsapp"></i
+              ></a>
+              <a href="https://www.tiktok.com/@modallasseventanddesign"
+                ><i class="bi bi-tiktok"></i
+              ></a>
+              <a href="https://web.facebook.com/people/The-Modallass-Event/61560320120342/"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+<div class="container-fluid">
+
+  <section class="hero-section d-flex align-items-center text-center  hero1">
+    <div class="container position-relative">
+      
+      <h1 class="fw-bold text-white mb-3">
+        Nos Services
+      </h1>
+      
+      <p class="text-white mb-4 hero-text">
+        Création de compositions florales adaptées à chaque ambiance et chaque espace.
+      </p>
+      
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="contact.html" class="btn btn-gold">
+          Demander un Devis
+        </a>
+        <a href="Boutique.html" class="btn btn-gold">
+          Showroom
+        </a>
+      </div>
+      
+    </div>
+  </section>
+  
+  
+  <div class="container text-center py-5">
+    
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+      
+      
+      <div class="col">
+        <div class="card cadre1 p-4">
+          
+          <img src="./img/josef.HEIC.jpeg" class="card-img-top image" alt="..." />
+          
+          
+          <div class="glass" aria-hidden="true"></div>
+          
+          
+          <div class="glass-content card-body text-white">
+            <div style="display: flex; align-items: center">
+              <i class="bi bi-check-square-fill" style="font-size: 25px; color: #d3ae36"></i>
+              <h2 class="card-title" style="margin-left: 15px">
+                Décoration <br />évènementielle
+                </h2>
+              </div>
+              <p class="card-text">
+                Conception et réalisation de décors pour tous types
+                d'évènements, de l'idée à la mise en place finale.
+              </p>
+              <a href="service.html" class="btn bouton1" role="button" data-bs-toggle="button">En savoir plus</a>
+              <i class="bi bi-arrow-right-short icon1"></i>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col">
+          <div class="card cadre1 p-4">
+            
+            <img src="./img/mariage.jpg" class="card-img-top image" alt="..." />
+            
+            
+            <div class="glass" aria-hidden="true"></div>
+            
+            
+            <div class="glass-content card-body text-white">
+              <div style="display: flex; align-items: center">
+                <i class="bi bi-check-square-fill" style="font-size: 25px; color: #d3ae36"></i>
+                <h2 class="card-title" style="margin-left: 15px">
+                  Décoration <br />évènementielle
+                </h2>
+              </div>
+              <p class="card-text">
+                Conception et réalisation de décors pour tous types
+                d'évènements, de l'idée à la mise en place finale.
+              </p>
+              <a href="service.html" class="btn bouton1" role="button" data-bs-toggle="button">En savoir plus</a>
+              <i class="bi bi-arrow-right-short icon1"></i>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col">
+          <div class="card cadre1 p-4">
+            
+            <img src="./img/bbbbbb.jpg" class="card-img-top image" alt="..." />
+            
+            
+            <div class="glass" aria-hidden="true"></div>
+            
+            
+            <div class="glass-content card-body text-white">
+              <div style="display: flex; align-items: center">
+                <i class="bi bi-check-square-fill" style="font-size: 25px; color: #d3ae36"></i>
+                <h2 class="card-title" style="margin-left: 15px">
+                  Décoration <br />évènementielle
+                </h2>
+              </div>
+              <p class="card-text">
+                Conception et réalisation de décors pour tous types
+                d'évènements, de l'idée à la mise en place finale.
+              </p>
+              <a href="service.html" class="btn bouton1" role="button" data-bs-toggle="button">En savoir plus</a>
+              <i class="bi bi-arrow-right-short icon1"></i>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 row-centered">
+        
+        
+        <div class="col">
+          <div class="card cadre1 p-4">
+            
+            <img src="./img/bbbbbb.jpg" class="card-img-top image" alt="..." />
+            
+            
+            <div class="glass" aria-hidden="true"></div>
+            
+            
+            <div class="glass-content card-body text-white">
+              <div style="display: flex; align-items: center">
+                <i class="bi bi-check-square-fill" style="font-size: 25px; color: #d3ae36"></i>
+                <h2 class="card-title" style="margin-left: 15px">
+                  Décoration <br />évènementielle
+                </h2>
+              </div>
+              <p class="card-text">
+                Conception et réalisation de décors pour tous types
+                d'évènements, de l'idée à la mise en place finale.
+              </p>
+              <a href="service.html" class="btn bouton1" role="button" data-bs-toggle="button">En savoir plus</a>
+              <i class="bi bi-arrow-right-short icon1"></i>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col">
+          <div class="card cadre1 p-4">
+            
+            <img src="./img/bbbbbb.jpg" class="card-img-top image" alt="..." />
+            
+            
+            <div class="glass" aria-hidden="true"></div>
+            
+            
+            <div class="glass-content card-body text-white">
+              <div style="display: flex; align-items: center">
+                <i class="bi bi-check-square-fill" style="font-size: 25px; color: #d3ae36"></i>
+                <h2 class="card-title" style="margin-left: 15px">
+                  Décoration <br />évènementielle
+                </h2>
+              </div>
+              <p class="card-text">
+                Conception et réalisation de décors pour tous types
+                d'évènements, de l'idée à la mise en place finale.
+              </p>
+              <a href="service.html" class="btn bouton1" role="button" data-bs-toggle="button">En savoir plus</a>
+              <i class="bi bi-arrow-right-short icon1"></i>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <section class="expertise-section py-5">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          
+          
+          <div class="col-lg-5">
+            <div class="expertise-img">
+              <img src="./img/service.jpeg" alt="Décoration Mariage" class="img-fluid">
+            </div>
+          </div>
+          
+          
+          <div class="col-lg-7 text-white">
+            <small class="fw-semibold">Notre Expertise</small>
+            <h2 class="fw-bold mt-2">
+              Décoration d'un <br> Mariage
+            </h2>
+            
+            <p class="mt-3">
+              Conception et réalisation de décors pour tous types d'événements,
+              de l'idée à la mise en place finale. Conception et réalisation
+              de décors pour tous types d'événements.
+            </p>
+            
+            <ul class="list-unstyled mt-4 expertise-list">
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Accompagnement Complet
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Moodboard Personnalisé
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Installation & Démontage
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+      
+          <div class="col-lg-8">
+            <h2 class="fw-bold text-gold mb-3">
+              Prêt à faire de votre évènement une référence ?
+            </h2>
+            <p class="text-muted mb-0">
+              Ne manquez pas les dernières tendances et les
+              collections exclusives en décoration d'évènement
+            </p>
+          </div>
+          
+          <div class="col-lg-4 mt-4 mt-lg-0 text-lg-end">
+            <a href="Boutique.html" class="btn btn-gold me-2">
+              Boutique →
+            </a>
+            <a href="contact.html" class="btn btn-outline-gold">
+              Demander un devis
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    
+   
+    
+    
+    <section>
+      <a href="https://wa.me/c/22962685058"
+      class="whatsapp-float d-flex align-items-center justify-content-center"
+      target="_blank"
+      aria-label="WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </section>
+</div>
+  
+  
+  <footer class="footer  ">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="./img/ggggggg.png" alt="Logo" class="footer-logo" />
+          <p>Votre partenaire pour des événements d'exception</p>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5>Menu</h5>
+          <a href="index.html">Accueil</a>
+          <a href="A propos.html">À propos</a>
+          <a href="service.html">Services</a>
+          <a href="Réalisaion.html">Réalisations</a>
+          <a href="Boutique.html">le showroom & la Botique</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5>Nos Services</h5>
+          <a href="service.html">Décoration Événementielle</a>
+          <a href="service.html">Scénographie Florale</a>
+          <a href="service.html">Location de matériel</a>
+          <a href="service.html">Vente d'Article</a>
+          <a href="service.html">Conception sur Mesure</a>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5>Contact</h5>
+          <div class="contact-info mb-2">
+            <i class="bi bi-telephone"></i> +229 0162685058
+            </div>
+            <div class="contact-info mb-2">
+              <i class="bi bi-envelope"></i> modallasseventanddesign@gmail.com
+            </div>
+            <div class="contact-info mb-3">
+              <i class="bi bi-geo-alt"></i> Zogbo, Cotonou
+            </div>
+            
+            
+            <div class="social-icons">
+              <a href="https://www.instagram.com/modallas_s_event_and_design"
+              ><i class="bi bi-instagram"></i
+                ></a>
+                <a href="https://wa.me/22962685058"
+                ><i class="bi bi-whatsapp"></i
+                  ></a>
+                  <a href="https://www.tiktok.com/@modallasseventanddesign"
+                  ><i class="bi bi-tiktok"></i
+                    ></a>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+    </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

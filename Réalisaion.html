@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nos Réalisations - Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        .navbar-logo {
+        height: 75px;
+        width: auto;
+      }
+
+      
+      .navbar-glass {
+        background-color: white;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-glass .navbar-brand,
+      .navbar-glass .nav-link {
+        color: #000000;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-glass .nav-link:hover {
+        color: #d3ae36;
+        transform: translateY(-2px);
+      }
+
+      
+      .social-icons a {
+        color: #d3ae36;
+        font-size: 1.2rem;
+        margin-left: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #d3ae36;
+        transform: scale(1.2);
+      }
+
+
+
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+
+        /* Hero Section */
+
+        .hero-section {
+
+            position: relative;
+
+            height: 100vh;
+
+            min-height: 400px;
+
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+
+                url(img/rii.jpeg) center/cover no-repeat;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+        }
+
+
+
+        .hero-content h1 {
+
+            font-size: 3.5rem;
+
+            font-weight: 700;
+
+            margin-bottom: 30px;
+
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+
+        }
+
+
+
+        .btn-discover {
+
+            background: linear-gradient(135deg, #d4a643 0%, #c89835 100%);
+
+            color: white;
+
+            padding: 15px 40px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-weight: 600;
+
+            font-size: 1rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            box-shadow: 0 5px 20px rgba(212, 166, 67, 0.4);
+            text-decoration: none;
+
+        }
+
+
+
+        .btn-discover:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 25px rgba(212, 166, 67, 0.6);
+
+            background: linear-gradient(135deg, #e0b550 0%, #d4a643 100%);
+
+        }
+
+
+
+        /* Excellence Section */
+
+        .excellence-section {
+
+            background: linear-gradient(135deg, #fffdf7 0%, #fff9ed 100%);
+
+            padding: 80px 0;
+
+        }
+
+
+
+        .section-title {
+
+            font-size: 2.5rem;
+
+            font-weight: 700;
+
+            color: #d4a643;
+
+            margin-bottom: 20px;
+
+            text-align: center;
+
+        }
+
+
+
+        .section-subtitle {
+
+            text-align: center;
+
+            color: #2c2c2c;
+
+            font-size: 1.1rem;
+
+            line-height: 1.8;
+
+            max-width: 800px;
+
+            margin: 0 auto 40px;
+
+        }
+
+
+
+        /* Filter Buttons */
+
+        .filter-container {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 60px;
+
+        }
+
+
+
+        .filter-btn {
+
+            background: white;
+
+            color: #d4a643;
+
+            padding: 10px 25px;
+
+            border: 2px solid #d4a643;
+
+            border-radius: 5px;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            font-size: 0.95rem;
+
+        }
+
+
+
+        .filter-btn:hover,
+
+        .filter-btn.active {
+
+            background: linear-gradient(135deg, #d4a643 0%, #c89835 100%);
+
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 15px rgba(212, 166, 67, 0.3);
+
+        }
+
+
+
+        /* Gallery Grid */
+
+        .gallery-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .gallery-item {
+
+            position: relative;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+            cursor: pointer;
+
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+            background: white;
+
+        }
+
+
+
+        .gallery-item:hover {
+
+            transform: translateY(-10px) scale(1.02);
+
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+        }
+
+
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 350px;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+
+        }
+
+
+
+        .gallery-item:hover img {
+
+            transform: scale(1.1);
+
+        }
+
+
+
+        .gallery-overlay {
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            right: 0;
+
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+
+            padding: 30px 20px 20px;
+
+            transform: translateY(100%);
+
+            transition: transform 0.4s ease;
+
+        }
+
+
+
+        .gallery-item:hover .gallery-overlay {
+
+            transform: translateY(0);
+
+        }
+
+
+
+        .gallery-category {
+
+            display: inline-block;
+
+            background: rgba(212, 166, 67, 0.9);
+
+            color: white;
+
+            padding: 5px 15px;
+
+            border-radius: 15px;
+
+            font-size: 0.8rem;
+
+            font-weight: 600;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .gallery-title {
+
+            color: white;
+
+            font-size: 1.1rem;
+
+            font-weight: 600;
+
+            margin: 0;
+
+        }
+
+
+
+        /* Badge sur les images */
+
+        .badge-custom {
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 15px;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            color: #d4a643;
+
+            padding: 8px 15px;
+
+            border-radius: 20px;
+
+            font-weight: 600;
+
+            font-size: 0.85rem;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+            z-index: 2;
+
+        }
+
+
+
+        /* Animation d'entrée */
+
+        @keyframes fadeInUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(40px);
+
+            }
+
+
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+
+        .gallery-item {
+
+            animation: fadeInUp 0.6s ease forwards;
+
+            opacity: 0;
+
+        }
+
+
+
+        .gallery-item:nth-child(1) {
+
+            animation-delay: 0.1s;
+
+        }
+
+
+
+        .gallery-item:nth-child(2) {
+
+            animation-delay: 0.2s;
+
+        }
+
+
+
+        .gallery-item:nth-child(3) {
+
+            animation-delay: 0.3s;
+
+        }
+
+
+
+        .gallery-item:nth-child(4) {
+
+            animation-delay: 0.4s;
+
+        }
+
+
+
+        .gallery-item:nth-child(5) {
+
+            animation-delay: 0.5s;
+
+        }
+
+
+
+        .gallery-item:nth-child(6) {
+
+            animation-delay: 0.6s;
+
+        }
+
+
+
+        /* Responsive */
+
+        @media (max-width: 768px) {
+
+            .hero-content h1 {
+
+                font-size: 2.5rem;
+
+            }
+
+
+
+            .section-title {
+
+                font-size: 2rem;
+
+            }
+
+
+
+            .gallery-grid {
+
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+                gap: 20px;
+
+            }
+
+
+
+            .filter-container {
+
+                gap: 10px;
+
+            }
+
+
+
+            .filter-btn {
+
+                padding: 8px 20px;
+
+                font-size: 0.9rem;
+
+            }
+
+        }
+
+
+
+        @media (max-width: 576px) {
+
+            .hero-content h1 {
+
+                font-size: 2rem;
+
+            }
+
+
+
+            .gallery-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+
+            .gallery-item img {
+
+                height: 300px;
+
+            }
+
+        }
+
+
+
+        /* Loader Animation */
+
+        .loader {
+
+            border: 4px solid #f3f3f3;
+
+            border-top: 4px solid #d4a643;
+
+            border-radius: 50%;
+
+            width: 40px;
+
+            height: 40px;
+
+            animation: spin 1s linear infinite;
+
+            margin: 50px auto;
+
+            display: none;
+
+        }
+
+
+
+        @keyframes spin {
+
+            0% {
+
+                transform: rotate(0deg);
+
+            }
+
+
+
+            100% {
+
+                transform: rotate(360deg);
+
+            }
+
+        }
+
+
+
+        .tag {
+
+            position: absolute;
+
+            top: 12px;
+
+            left: 12px;
+
+            background: #fff;
+
+            color: #f4b400;
+
+            font-size: 12px;
+
+            padding: 4px 10px;
+
+            border-radius: 50px;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+        }
+
+
+
+        .gallery-item:not(.mt-5) {
+
+            height: 100%;
+
+        }
+
+
+
+        .gallery-item:not(.mt-5) img {
+
+            height: 100%;
+
+            min-height: 350px;
+
+        }
+
+
+
+        .gallery-item.mt-5 {
+
+            height: 100%;
+
+        }
+
+
+
+        .gallery-item.mt-5 img {
+
+            height: 100%;
+
+            min-height: 350px;
+
+        }
+
+        /* ============================================
+           SECTION 2 - DÉCOUVREZ & CRÉER ÉVÉNEMENT
+        ============================================ */
+
+        .discover-area {
+            background-color: #FAF7EB;
+            padding: 80px 0;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .content-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* Partie gauche - Texte */
+        .text-block {
+            flex: 1;
+        }
+
+        .heading-primary {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #d4a643;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .description-text {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        /* Barre de statistiques */
+        .metrics-strip {
+            background: linear-gradient(135deg, #d4a643 0%, #c89835 100%);
+            border-radius: 50px;
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .metric-box {
+            text-align: center;
+            color: white;
+        }
+
+        .metric-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .metric-name {
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        /* Partie droite - Images */
+        .image-block {
+            flex: 1;
+            position: relative;
+            left: 200px;
+        }
+
+        .photos-stack {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            transform: rotate(3deg);
+        }
+
+        .photo-card {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+
+
+        /* Section Créer Événement */
+        .event-creator-area {
+            background: white;
+            padding: 70px 0;
+        }
+
+        .header-golden {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #d4a643;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .subheader-text {
+            text-align: center;
+            color: #d4a643;
+            font-size: 1rem;
+            margin-bottom: 50px;
+        }
+
+        /* Boutons Réalisation */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .realisation-button {
+            background: white;
+            color: #d4a643;
+            padding: 12px 30px;
+            border: 2px solid #d4a643;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .realisation-button:hover {
+            background: #d4a643;
+            color: white;
+        }
+
+        /* Media Queries pour la section discover-area */
+        @media (max-width: 992px) {
+            .content-flex {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .image-block {
+                left: 0;
+            }
+            .photos-stack {
+                transform: rotate(0deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .heading-primary {
+                font-size: 2.2rem;
+            }
+            .metrics-strip {
+                padding: 20px 25px;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .metric-value {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .discover-area {
+                padding: 60px 0;
+            }
+            .heading-primary {
+                font-size: 1.8rem;
+            }
+            .description-text {
+                font-size: 0.95rem;
+            }
+            .photos-stack {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        /* Media Queries pour la section event-creator-area */
+        @media (max-width: 768px) {
+            .event-creator-area {
+                padding: 50px 0;
+            }
+            .header-golden {
+                font-size: 2rem;
+            }
+            .action-buttons {
+                gap: 15px;
+            }
+            .realisation-button {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .event-creator-area {
+                padding: 40px 0;
+            }
+            .header-golden {
+                font-size: 1.8rem;
+            }
+            .subheader-text {
+                font-size: 0.95rem;
+                margin-bottom: 35px;
+            }
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .realisation-button {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+
+            .footer {
+        background-color: #262626;
+        color: #ccc;
+        padding: 70px 0;
+      }
+
+      .footer h5 {
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .footer a {
+        color: #ccc;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        transition: 0.3s;
+      }
+
+      .footer a:hover {
+        color: #d3ae36;
+        padding-left: 5px;
+      }
+
+      .footer .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #444;
+        border-radius: 50%;
+        margin-right: 10px;
+        color: #fff;
+      }
+
+      .footer .social-icons a:hover {
+        background-color: #d3ae36;
+        border-color: #d3ae36;
+        color: #2b2b2b;
+      }
+
+      .footer .contact-info i {
+        color: #d3ae36;
+        margin-right: 10px;
+      }
+
+      .footer-logo {
+        height: 100px;
+      }
+
+
+      .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+      
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="/">
+            <img
+              src="./img/logo header.jpg"
+              alt="Logo Modallas"
+              class="navbar-logo"
+            />
+          </a>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="A propos.html">À propos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="service.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Réalisaion.html">Réalisations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Boutique.html">Boutique</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+
+            <div class="social-icons">
+              <!-- ✅ CORRIGÉ : URLs nettoyées -->
+              <a href="https://www.instagram.com/modallas_s_event_and_design"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="https://wa.me/22962685058"
+                ><i class="bi bi-whatsapp"></i
+              ></a>
+              <a href="https://www.tiktok.com/@modallasseventanddesign"
+                ><i class="bi bi-tiktok"></i
+              ></a>
+              <a href="https://web.facebook.com/people/The-Modallass-Event/61560320120342/"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container-fluid">
+
+        
+        <section class="hero-section">
+
+            <div class="hero-content">
+                
+                <h1>Nos Réalisation</h1>
+                <a class="btn-discover" onclick="scrollToGallery()" href="contact.html"> Lancer mon projets</a>
+                
+                
+                
+            </div>
+            
+        </section>
+
+        
+        
+        <!-- Excellence Section -->
+        
+        <section class="excellence-section" id="gallery">
+            
+            <div class="container">
+                
+            <h2 class="section-title">L'excellence dans le détails</h2>
+            
+            <p class="section-subtitle">
+                
+                Découvrez nos réalisations à travers une sélection d'évènement d'exception,
+                
+                où chaque détail révèle notre passion et notre engagement envers la perfection.
+                
+            </p>
+            
+            
+            
+            <!-- Filter Buttons -->
+            
+            <div class="filter-container">
+                
+                <button class="filter-btn" data-filter="all">Tous</button>
+                
+                <button class="filter-btn" data-filter="decors">Décors floraux</button>
+                
+                <button class="filter-btn" data-filter="ballons">Décors ballons</button>
+                
+                <button class="filter-btn" data-filter="corporate">Corporate</button>
+                
+                <button class="filter-btn" data-filter="fete">Fête</button>
+                
+            </div>
+            
+            
+            
+            <!-- Loader -->
+            
+            <div class="loader" id="loader"></div>
+            
+            
+            
+            <!-- Gallery Grid -->
+            
+            <div class="gallery-grid" id="galleryGrid">
+                
+                <!-- Image 1 -->
+                
+                <div class="gallery-item " data-category="decors">
+                    
+                    <span class="badge tag">Mariage</span>
+                    
+                    <img src="./img/M.réalisation.png" alt="Table élégante">
+                    
+                    <div class="gallery-overlay">
+                        
+                        <span class="gallery-category">Décors floraux</span>
+                        
+                        <h3 class="gallery-title">Décoration de table raffinée</h3>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                
+                <div class="gallery-item" data-category="ballons">
+                    
+                    <span class="badge tag">Anniverssaire</span>
+                    
+                    <img src="./img/Ballon.jpg" alt="Table élégante">
+                    
+                    <div class="gallery-overlay">
+                        
+                        <span class="gallery-category">Décors ballons</span>
+                        
+                        <h3 class="gallery-title">Arche de ballons pastels</h3>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                
+                <div class="gallery-item" data-category="decors">
+                    
+                    <span class="badge tag">Baptême</span>
+                    
+                    <img src="./img/Fleurs22.jpg" alt="Table élégante">
+                    
+                    <div class="gallery-overlay">
+                        
+                        <span class="gallery-category">Décors floraux</span>
+                        
+                        <h3 class="gallery-title">Composition florale verte</h3>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                
+                <div class="gallery-item" data-category="corporate">
+                    
+                    <span class="badge tag">Corporate</span>
+                    
+                    <img src="./img/Table Rouge.jpg" alt="Table élégante">
+                    
+                    <div class="gallery-overlay">
+
+                        <span class="gallery-category">Corporate</span>
+                        
+                        <h3 class="gallery-title">Soirée d'entreprise</h3>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                
+                <div class="gallery-item" data-category="fete">
+                    
+                    <span class="badge tag">Chill</span>
+                    
+                    <img src="./img/Chill.jpg" alt="Table élégante">
+                    
+                    <div class="gallery-overlay">
+                        
+                        <span class="gallery-category">Fête</span>
+                        
+                        <h3 class="gallery-title">Piste de danse illuminée</h3>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+
+                <div class="gallery-item" data-category="ballons">
+                    
+                    <span class="badge tag">Babyshower</span>
+                    
+                    <img src="./img/Baby.jpg" alt="Table élégante">
+                    
+                    <div class="gallery-overlay">
+                        
+                        <span class="gallery-category">Décors ballons</span>
+                        
+                        <h3 class="gallery-title">Arche de ballons pastels</h3>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+    
+    
+    <section class="discover-area">
+        <div class="main-wrapper">
+            <div class="content-flex">
+                <!-- Partie Gauche - Texte et Stats -->
+                <div class="text-block">
+                    <h2 class="heading-primary">Découvrez toutes nos réalisations</h2>
+                    <p class="description-text">
+                        Chaque évènement commence par une vision. Explorez comment nous
+                        concevons, planifions et réalisons vos évènement
+                    </p>
+                    
+                    <!-- Barre de statistiques -->
+                    <div class="metrics-strip">
+                        <div class="metric-box">
+                            <span class="metric-value">+120</span>
+                            <span class="metric-name">Évènement réalisé</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-value">98%</span>
+                            <span class="metric-name">Satisfaction</span>
+                        </div>
+                        <div class="metric-box">
+                            <span class="metric-value">+60</span>
+                            <span class="metric-name">Accompagnement</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Partie Droite - Images -->
+                <div class="image-block">
+                    <div class="photos-stack">
+                        <div class="photo-card">
+                            <img src="./img/Chou.png" alt="Table setup">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================
+    SECTION 3 - CRÉER VOTRE ÉVÉNEMENT
+    ============================================ -->
+    
+    <section class="event-creator-area">
+        <div class="main-wrapper">
+            <h2 class="header-golden">Prêt à créer votre événement de rêve ?</h2>
+            <p class="subheader-text">
+                Contactez-nous dès maintenant ou visitez notre boutique
+            </p>
+            
+            <div class="action-buttons">
+                <a class="realisation-button" href="">Réalisation</a>
+                <a class="realisation-button" href="">Réalisation</a>
+                <a class="realisation-button" href="">Réalisation</a>
+                
+                
+            </div>
+        </div>
+    </section>
+</div>
+    
+    <a
+    href="https://wa.me/22962685058"
+    class="whatsapp-float d-flex align-items-center justify-content-center"
+    target="_blank"
+    aria-label="Contact WhatsApp"
+    >
+    <i class="bi bi-whatsapp fs-2 text-white"></i>
+</a>
+
+
+
+
+
+
+<footer class="footer  ">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="./img/ggggggg.png" alt="Logo" class="footer-logo" />
+                <p>Votre partenaire pour des événements d'exception</p>
+            </div>
+            
+            <div class="col-lg-2 col-md-6">
+                <h5>Menu</h5>
+                <a href="index.html">Accueil</a>
+                <a href="A propos.html">À propos</a>
+                <a href="service.html">Services</a>
+                <a href="Réalisaion.html">Réalisations</a>
+                <a href="Boutique.html">le showroom & la Botique</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <h5>Nos Services</h5>
+                <a href="service.html">Décoration Événementielle</a>
+                <a href="service.html">Scénographie Florale</a>
+                <a href="service.html">Location de matériel</a>
+                <a href="service.html">Vente d'Article</a>
+                <a href="service.html">Conception sur Mesure</a>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact</h5>
+                <div class="contact-info mb-2">
+                    <i class="bi bi-telephone"></i> +229 0162685058
+                </div>
+                <div class="contact-info mb-2">
+                    <i class="bi bi-envelope"></i> modallasseventanddesign@gmail.com
+                </div>
+                <div class="contact-info mb-3">
+                    <i class="bi bi-geo-alt"></i> Zogbo, Cotonou
+                </div>
+                
+                
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/modallas_s_event_and_design"
+                    ><i class="bi bi-instagram"></i
+                        ></a>
+                        <a href="https://wa.me/22962685058"
+                        ><i class="bi bi-whatsapp"></i
+                            ></a>
+                            <a href="https://www.tiktok.com/@modallasseventanddesign"
+                            ><i class="bi bi-tiktok"></i
+                                ></a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        // Smooth scroll vers la galerie
+
+        function scrollToGallery() {
+
+            document.getElementById('gallery').scrollIntoView({
+
+                behavior: 'smooth'
+
+            });
+
+        }
+
+
+
+        // Système de filtrage
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        const loader = document.getElementById('loader');
+
+
+
+        filterBtns.forEach(btn => {
+
+            btn.addEventListener('click', function () {
+
+                // Retirer la classe active de tous les boutons
+
+                filterBtns.forEach(b => b.classList.remove('active'));
+
+                // Ajouter la classe active au bouton cliqué
+
+                this.classList.add('active');
+
+
+
+                const filterValue = this.getAttribute('data-filter');
+
+
+
+                // Afficher le loader
+
+                loader.style.display = 'block';
+
+
+
+                // Cacher tous les items
+
+                galleryItems.forEach(item => {
+
+                    item.style.opacity = '0';
+
+                    item.style.transform = 'scale(0.8)';
+
+                });
+
+
+
+                // Simuler un délai de chargement
+
+                setTimeout(() => {
+
+                    loader.style.display = 'none';
+
+
+
+                    galleryItems.forEach((item, index) => {
+
+                        const category = item.getAttribute('data-category');
+
+
+
+                        if (filterValue === 'all' || category === filterValue) {
+
+                            setTimeout(() => {
+
+                                item.style.display = 'block';
+
+                                item.style.opacity = '1';
+
+                                item.style.transform = 'scale(1)';
+
+                            }, index * 100);
+
+                        } else {
+
+                            item.style.display = 'none';
+
+                        }
+
+                    });
+
+                }, 500);
+
+            });
+
+        });
+
+
+
+        // Animation au scroll
+
+        const observerOptions = {
+
+            threshold: 0.1,
+
+            rootMargin: '0px 0px -50px 0px'
+
+        };
+
+
+
+        const observer = new IntersectionObserver(function (entries) {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = '1';
+
+                    entry.target.style.transform = 'translateY(0)';
+
+                }
+
+            });
+
+        }, observerOptions);
+
+
+
+        // Observer tous les items de la galerie
+
+        galleryItems.forEach(item => {
+
+            observer.observe(item);
+
+        });
+
+
+
+        // Animation des boutons de filtre
+
+        filterBtns.forEach(btn => {
+
+            btn.addEventListener('mouseenter', function () {
+
+                this.style.transform = 'translateY(-2px)';
+
+            });
+
+
+
+            btn.addEventListener('mouseleave', function () {
+
+                if (!this.classList.contains('active')) {
+
+                    this.style.transform = 'translateY(0)';
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+
+
+</html>

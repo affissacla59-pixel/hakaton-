@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Décoration Événementielle</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <style>
+      html, body {
+        overflow: hidden;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #main-content {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      
+      .hero-section {
+        min-height: 95vh;
+        background-image: url("img/IMG_3859.jpeg");
+        height: 115vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        margin-bottom: 80px;
+      }
+
+      .navbar-logo {
+        height: 75px;
+        width: auto;
+      }
+
+      
+      .navbar-glass {
+        background-color: white;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-glass .navbar-brand,
+      .navbar-glass .nav-link {
+        color: #000000;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-glass .nav-link:hover {
+        color: #d3ae36;
+        transform: translateY(-2px);
+      }
+
+      
+      .social-icons a {
+        color: #d3ae36;
+        font-size: 1.2rem;
+        margin-left: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #d3ae36;
+        transform: scale(1.2);
+      }
+
+      
+      .hero-content {
+        padding-top: 150px;
+        color: white;
+        max-width: 650px; 
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        max-width: 500px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        color: #000000;
+      }
+
+      .hero-content span {
+        color: #d3ae36;
+      }
+
+      
+      .btn-glass {
+        background-color: #d3ae36;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #000000;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-glass:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        color: #d3ae36;
+      }
+
+      .btn-glass i {
+        margin-right: 8px;
+      }
+
+      
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      
+      @media (max-width: 768px) {
+        .hero-section {
+          min-height: 70vh;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem; 
+        }
+
+        .navbar-glass {
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        .social-icons {
+          margin-top: 10px;
+        }
+      }
+
+      .collab-item {
+        background: #f8f6f2;
+        border-radius: 12px;
+        margin-bottom: 10px;
+      }
+
+      .collab-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding: 15px 20px;
+        font-weight: 600;
+      }
+
+      .arrow {
+        width: 30px;
+        height: 30px;
+        background-color: #d3ae36;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .services-section {
+        background-color: #faf7f2;
+      }
+
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+
+      .service-card img {
+        width: 100%;
+        height: 342px; 
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .service-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+      }
+
+      .service-overlay h5 {
+        font-weight: 600;
+      }
+
+      .service-overlay p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .service-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .service-card:hover .service-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .btng {
+        background-color: #d3ae36;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 8px;
+      }
+
+      .hero-carousel {
+        position: relative;
+        height: 90vh;
+      }
+
+      .hero-carousel .carousel-item img {
+        height: 90vh;
+        object-fit: cover;
+      }
+
+      .glass-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 25px;
+        padding: 50px;
+        max-width: 900px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        animation: fadeUp 1s ease;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -40%);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .glass-content h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .gold {
+        color: #d3ae36;
+      }
+
+      .btn-gold {
+        background: #d3ae36;
+        color: #fff;
+        border-radius: 50px;
+        padding: 12px 35px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .btn-gold:hover {
+        background: #d3ae36;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        .glass-content h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .testimonials {
+        background-color: #fbf7ed;
+        padding: 80px 0;
+      }
+
+      .testimonials h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+      }
+
+      .testimonials p.subtitle {
+        color: #6c757d;
+        font-size: 1.1rem;
+      }
+
+      .testimonial-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        position: relative;
+        height: 100%;
+      }
+
+      .quote-icon {
+        font-size: 60px;
+        color: #d3ae36;
+        position: absolute;
+        top: -25px;
+        left: 20px;
+      }
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        background: #d9d9d9;
+        border-radius: 50%;
+      }
+
+      .stars i {
+        color: #d3ae36;
+        font-size: 14px;
+      }
+
+      .testimonial-text {
+        font-size: 0.95rem;
+        margin-top: 15px;
+      }
+
+      .signature {
+        margin-top: 15px;
+        font-style: italic;
+        font-size: 0.9rem;
+      }
+
+      .arriere-plan {
+        
+        background-color: #faf5e6;
+        padding: 80px 0;
+      }
+
+      .arriere-plan h2 span {
+        color: #d3ae36;
+      }
+
+      .icon-circle {
+        width: 70px;
+        height: 70px;
+        background-color: #d3ae36;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 0 auto 20px;
+      }
+
+      .why-item h5 {
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .why-item p {
+        color: #555;
+        font-size: 15px;
+      }
+
+      .cta-section {
+        background-color: #d3ae36;
+        padding: 90px 0;
+        text-align: center;
+        color: #fff;
+      }
+
+      .cta-section h2 {
+        font-weight: 800;
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      .cta-section p {
+        font-size: 18px;
+        margin-bottom: 40px;
+      }
+
+      .cta-btn {
+        border: 2px solid #fff;
+        color: #fff;
+        background: transparent;
+        padding: 12px 40px;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .cta-btn:hover {
+        background-color: #fff;
+        color: #d3ae36;
+      }
+
+      .footer {
+        background-color: #262626;
+        color: #ccc;
+        padding: 70px 0;
+        position: relative;
+        bottom: -20px;
+      }
+
+      .footer h5 {
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .footer a {
+        color: #ccc;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        transition: 0.3s;
+      }
+
+      .footer a:hover {
+        color: #d3ae36;
+        padding-left: 5px;
+      }
+
+      .footer .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #444;
+        border-radius: 50%;
+        margin-right: 10px;
+        color: #fff;
+      }
+
+      .footer .social-icons a:hover {
+        background-color: #d3ae36;
+        border-color: #d3ae36;
+        color: #2b2b2b;
+      }
+
+      .footer .contact-info i {
+        color: #d3ae36;
+        margin-right: 10px;
+      }
+
+      .footer-logo {
+        height: 100px;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #25d366;
+        border-radius: 50%;
+        z-index: 1000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #1ebe5d;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main-content">
+
+
+      
+
+      
+      <nav class="navbar navbar-expand-lg navbar-glass sticky-top">
+        
+            <div class="container">
+              <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img
+              src="./img/logo header.jpg"
+              alt="Logo Modallas"
+              class="navbar-logo"
+              />
+            </a>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="A propos.html">À propos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Réalisaion.html">Réalisations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Boutique.html">Boutique</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+              
+              <div class="social-icons">
+                <!-- ✅ CORRIGÉ : URLs nettoyées -->
+                <a href="https://www.instagram.com/modallas_s_event_and_design"
+                ><i class="bi bi-instagram"></i
+                  ></a>
+                  <a href="https://wa.me/22962685058"
+                  ><i class="bi bi-whatsapp"></i
+                    ></a>
+                    <a href="https://www.tiktok.com/@modallasseventanddesign"
+                    ><i class="bi bi-tiktok"></i
+                      ></a>
+                      <a href="https://web.facebook.com/people/The-Modallass-Event/61560320120342/"
+                      ><i class="bi bi-facebook"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+                <div class="container-fluid">
+
+                  <section class="hero-section">
+                    <div class="container">
+                      
+                      <div class="hero-content glass-card p-5 rounded-4 mt-5 mb-5">
+                        <h1>
+                          Quand la <span>décoration</span> <br />
+                          devient une <span><br />émotion</span>
+                        </h1>
+                        <p>
+                          Modallas_s Event & Design imagine, crée et sublime vos événements à
+                          travers des décors floraux et scénographies élégantes, pensés pour
+                          marquer les esprits
+                        </p>
+                        
+                        <div class="d-flex gap-3 flex-wrap">
+                          <a href="contact.html" class="btn btn-glass">
+                            <i class="bi bi-images"></i>Demander un devis
+                          </a>
+                          <a href="Boutique.html" class="btn btn-glass">
+                            <i class="bi bi-images"></i> Visiter le showroom
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </section>
+                </div>
+    <div class="container-fluid">
+
+      <section>
+        <div class="container my-5">
+          <div class="row align-items-start">
+            
+            <div class="col-lg-6">
+              <h3 class="fw-bold mb-2">Nos collaborateurs d'Excellence</h3>
+              <p class="text-muted mb-4">
+                Modellas Event & Design collabore avec plusieurs partenaires.
+              </p>
+            
+              <div class="accordion" id="collaboration">
+                
+                <div class="collab-item">
+                  <button
+                  class="collab-btn"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#item1"
+                  >
+                  Décorateurs
+                  <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div
+                id="item1"
+                class="collapse show"
+                data-bs-parent="#collaboration"
+                >
+                <div class="px-4 pb-3 text-muted">
+                  Grâce à notre collaboration avec des décorateurs qualifiés,
+                  nous transformons chaque événement en une expérience
+                  visuelle unique et mémorable.
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="collab-item">
+              <button
+              class="collab-btn"
+              data-bs-toggle="collapse"
+              data-bs-target="#item2"
+              >
+              Agences Événementielles
+              <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+          </button>
+          <div
+          id="item2"
+          class="collapse"
+          data-bs-parent="#collaboration"
+          >
+          <div class="px-4 pb-3 text-muted">
+            Nous garantissons une gestion globale et harmonieuse de
+            chaque événement,grâce à notre collaboration avec des
+            agences partenaires.
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="collab-item">
+        <button
+        class="collab-btn"
+        data-bs-toggle="collapse"
+        data-bs-target="#item3"
+        >
+        Fleuristes
+        <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+      </button>
+      <div
+      id="item3"
+      class="collapse"
+      data-bs-parent="#collaboration"
+      >
+      <div class="px-4 pb-3 text-muted">
+        Création florale sur mesure pour sublimer chaque
+        événement.Des créations florales sur mesure qui transforment
+        chaque événement en une expérience visuelle inoubliable.
+      </div>
+    </div>
+  </div>
+  
+  
+            <div class="collab-item">
+              <button
+              class="collab-btn"
+              data-bs-toggle="collapse"
+              data-bs-target="#item4"
+              >
+              Photographes
+              <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+            </button>
+            <div
+            id="item4"
+            class="collapse"
+            data-bs-parent="#collaboration"
+            >
+            <div class="px-4 pb-3 text-muted">
+              Des photographes experts capturent avec précision les
+              instants forts pour des souvenirs durables et authentiques.
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="collab-item">
+          <button
+          class="collab-btn"
+          data-bs-toggle="collapse"
+          data-bs-target="#item5"
+          >
+          Restaurants et Hôtels
+          <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+        </button>
+        <div
+        id="item5"
+        class="collapse"
+        data-bs-parent="#collaboration"
+        >
+        <div class="px-4 pb-3 text-muted">
+          Notre collaboration avec des restaurants et hôtels de
+          confiance nous permet d'offrir des cadres chaleureux et
+          raffinés, où chaque événement devient une expérience unique
+          et inoubliable.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-lg-6">
+  <div class="row g-3">
+    <div class="col-6">
+      <img
+      src="./img/table jaune.jpg"
+      class="img-fluid rounded-4 h-100 object-fit-cover"
+      />
+    </div>
+    <div class="col-6">
+      <img
+      src="./img/table vert 222.jpg"
+      class="img-fluid rounded-4 h-100 object-fit-cover"
+      />
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+    <div class="container-fluid">
+
+      <section class="services-section py-5">
+        <div class="container text-center">
+          <h2 class="fw-bold mb-2" style="color: #d3ae36">Nos Expertises clés</h2>
+          <p class="text-muted mb-5">
+            Une gamme complète de services pour tous vos événements
+          </p>
+          
+          <div class="row g-4">
+            
+            <div class="col-md-4">
+              <div class="service-card">
+                <img src="./img/mariage.jpg" class="img-fluid" alt="Mariage" />
+                <div class="service-overlay">
+                  <i class="bi bi-heart"></i>
+                  <h5>Scénographie floral</h5>
+                  <p>
+                    Des créations florales uniques qui donnent vie à vos espaces
+                    et transforment chaque événement en un moment d'émotion.
+                  </p>
+                  <a href="service.html" class="btn btn-outline-light btn-sm"
+                  >En savoir plus</a
+                  >
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="col-md-4">
+              <div class="service-card">
+                <img
+                src="./img/table noir.jpg"
+                class="img-fluid"
+                alt="Anniversaire"
+                />
+                <div class="service-overlay">
+                  <i class="bi bi-gift"></i>
+                  <h5>Décoration Événementielle clé en main</h5>
+                  <p>
+                    Nous imaginons et réalisons des décors uniques qui donnent vie
+                    à vos idées et rendent chaque événement inoubliable.
+                  </p>
+                  <a href="service.html" class="btn btn-outline-light btn-sm"
+                  >En savoir plus</a
+                  >
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="col-md-4">
+              <div class="service-card">
+                <img src="./img/bbbbbb.jpg" class="img-fluid" alt="Business" />
+                <div class="service-overlay">
+                  <i class="bi bi-briefcase"></i>
+                  <h5>Conception sur mesure</h5>
+                  <p>L'Art de la Conception Personnalisée</p>
+                  <a href="service.html" class="btn btn-outline-light btn-sm"
+                >En savoir plus</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-5">
+          <a href="service.html" class="px-4 btng">En Savoir Plus</a>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div
+      id="heroSlider"
+      class="carousel slide hero-carousel"
+      data-bs-ride="carousel"
+      data-bs-interval="4000"
+      >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./img/11.jpg" class="d-block w-100" alt="" />
+          <div class="glass-content">
+            <h1>
+              Offrez à vos <span class="gold">Hôtes</span> la meilleure<br />
+              <span class="gold">Expérience</span> pour vos événements
+            </h1>
+            <div class="mt-4">
+              <a href="contact.html" class="btn btn-gold">Demander un devis</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <img src="./img/22.jpg" class="d-block w-100" alt="" />
+          <div class="glass-content">
+            <h1>
+              Une décoration<br />
+              <span class="gold">Élégante & Inoubliable</span>
+            </h1>
+            <div class="mt-4">
+              <a href="Réalisaion.html" class="btn btn-gold">Découvrir Nos Réalisations</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <img src="./img/33.jpg" class="d-block w-100" alt="" />
+          <div class="glass-content">
+            <h1>
+              Sublimez vos<br />
+              <span class="gold">Moments Importants</span>
+            </h1>
+            <div class="mt-4">
+              <a href="service.html" class="btn btn-gold">Visiter le Showroom</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <img src="./img/44.jpg" class="d-block w-100" alt="" />
+          <div class="glass-content">
+            <h1>
+              Une expérience<br />
+              <span class="gold">Unique & Sur Mesure</span>
+            </h1>
+            <div class="mt-4">
+              <a href="contact.html" class="btn btn-gold">Contactez-nous</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#heroSlider"
+      data-bs-slide="prev"
+      >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#heroSlider"
+    data-bs-slide="next"
+    >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+</section>
+</div>
+<div class="container-fluid">
+
+  <section class="testimonials">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Ils nous ont fais <span class="gold">Confiance</span>...</h2>
+        <p class="subtitle mt-3">
+          Une gamme complète de services pour tous vos événements
+        </p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="d-flex align-items-center mb-2">
+              <div class="avatar me-3"></div>
+              <div>
+                <strong>Bertille Z.</strong>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              Pour le baptême de ma fille, j'ai particulièrement apprécié le
+              professionnalisme de Mr Odilon. Bien que leur siège soit à
+              Zogbo, la communication a été fluide et les délais respectés à
+              la minute près. La qualité du service se voit dans les moindres
+              détails, de la finition des arches de ballons à la disposition
+              millimétrée des tables. Une expérience sans faute !
+            </p>
+            <div class="signature">— Bertille Z., Parent.</div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="d-flex align-items-center mb-2">
+              <div class="avatar me-3"></div>
+              <div>
+                <strong>Roger A.</strong>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              Un service exceptionnel du début à la fin. L'équipe a su
+              comprendre nos attentes et les dépasser. Tout était parfaitement
+              organisé et exécuté avec soin.
+            </p>
+            <div class="signature">— Roger A., Parent.</div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="d-flex align-items-center mb-2">
+              <div class="avatar me-3"></div>
+              <div>
+                <strong>Médard KOUDEBI</strong>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <p class="testimonial-text">
+              Notre satisfaction à été total voir même au delà de nos
+              attentes. nous venons par la présente vous dire merci. Surtout
+              que votre dispobilité a été total pendant toute les étapes.
+            </p>
+            <div class="signature">
+              — Médard KOUDEBI, le representant de la famille
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+    
+    <div class="container-fluid">
+
+      <section class="arriere-plan">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Pourquoi nous <span>Choisir</span> ?</h2>
+          </div>
+          
+          <div class="row text-center g-4">
+            <div class="col-md-3">
+              <div class="why-item">
+                <div class="icon-circle">
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <h5>Excellence</h5>
+                <p>Une Qualité irréprochable</p>
+              </div>
+            </div>
+            
+            <div class="col-md-3">
+              <div class="why-item">
+                <div class="icon-circle">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <h5>Ponctualité</h5>
+                <p>Un Respect rigoureux des délais</p>
+              </div>
+            </div>
+            
+            <div class="col-md-3">
+              <div class="why-item">
+                <div class="icon-circle">
+                  <i class="bi bi-palette-fill"></i>
+                </div>
+                <h5>Créativité</h5>
+                <p>Des Conceptions uniques</p>
+              </div>
+            </div>
+            
+            <div class="col-md-3">
+              <div class="why-item">
+                <div class="icon-circle">
+                  <i class="bi bi-check-all"></i>
+                </div>
+                <h5>Services Pro</h5>
+                <p>Accompagnement complet</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="container-fluid">
+      <section class="cta-section">
+        <div class="container">
+          <h2>Prêt à créer votre événement de rêve ?</h2>
+          <p>Contactez-nous dès maintenant ou visitez notre boutique</p>
+          
+          <div class="row justify-content-center g-4">
+            <div class="col-md-4 col-12">
+              <a href="Réalisaion.html" class="btn cta-btn w-100">Découvrir nos réalisation</a>
+            </div>
+            <div class="col-md-4 col-12">
+              <a href="contact.html" class="btn cta-btn w-100">Demander un dévis</a>
+            </div>
+            <div class="col-md-4 col-12">
+              <a href="service.html" class="btn cta-btn w-100">Showroom</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    
+    <div>
+      <a
+      href="https://wa.me/22962685058"
+      class="whatsapp-float d-flex align-items-center justify-content-center"
+      target="_blank"
+      aria-label="Contact WhatsApp"
+      >
+      <i class="bi bi-whatsapp fs-2 text-white"></i>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <img src="./img/ggggggg.png" alt="Logo" class="footer-logo" />
+          <p>Votre partenaire pour des événements d'exception</p>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5>Menu</h5>
+          <a href="index.html">Accueil</a>
+          <a href="A propos.html">À propos</a>
+          <a href="service.html">Services</a>
+          <a href="Réalisaion.html">Réalisations</a>
+          <a href="Boutique.html">le showroom & la Botique</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5>Nos Services</h5>
+          <a href="service.html">Décoration Événementielle</a>
+          <a href="service.html">Scénographie Florale</a>
+          <a href="service.html">Location de matériel</a>
+          <a href="service.html">Vente d'Article</a>
+          <a href="service.html">Conception sur Mesure</a>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h5>Contact</h5>
+          <div class="contact-info mb-2">
+            <i class="bi bi-telephone"></i> +229 0162685058
+          </div>
+          <div class="contact-info mb-2">
+            <i class="bi bi-envelope"></i> modallasseventanddesign@gmail.com
+          </div>
+          <div class="contact-info mb-3">
+            <i class="bi bi-geo-alt"></i> Zogbo, Cotonou
+          </div>
+          
+          
+          <div class="social-icons">
+            <a href="https://www.instagram.com/modallas_s_event_and_design"
+            ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="https://wa.me/22962685058"
+              ><i class="bi bi-whatsapp"></i
+                ></a>
+                <a href="https://www.tiktok.com/@modallasseventanddesign"
+                ><i class="bi bi-tiktok"></i
+                  ></a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      </body>
+      </html>
+      
